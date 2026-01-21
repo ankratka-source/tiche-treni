@@ -42,7 +42,7 @@ export default function App() {
           <div>
             <h1>Tiché tření</h1>
             <p className="subtle">
-              Vlož e-mail. Dostaneš 4 body: % tření, problém, riziko odkladu a jednu větu k odpovědi.
+              Vlož e-mail a získej jasnou diagnózu tření a větu do odpovědi.
             </p>
           </div>
           <span className="pill">v1</span>
@@ -62,7 +62,14 @@ export default function App() {
             <button className="secondary" onClick={copyResult} disabled={!result}>
               Zkopírovat výsledek
             </button>
-            <button className="secondary" onClick={() => { setEmailText(""); setResult(""); setError(""); }}>
+            <button
+              className="secondary"
+              onClick={() => {
+                setEmailText("");
+                setResult("");
+                setError("");
+              }}
+            >
               Vyčistit
             </button>
           </div>
@@ -71,6 +78,7 @@ export default function App() {
 
           {result && (
             <div className="result">
+              <h2>Výsledek</h2>
               <pre>{result}</pre>
             </div>
           )}
@@ -79,7 +87,3 @@ export default function App() {
     </div>
   );
 }
-
-
-
-
